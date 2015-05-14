@@ -23,25 +23,25 @@
 
   View.prototype.startGame = function() {
     var that = this;
+
     $(".tile").on("click", function(event) {
-      var $clicked = $(event.currentTarget);
-      that.markTile($clicked);
+      if (that.game.currentPlayer === "X") {
+        var $clicked = $(event.currentTarget);
+        that.markTile($clicked);
+      }
     });
+
+    if (this.game.currentPlayer === "Y") {
+      this.game.playComputerMove();
+    }
   };
 
   View.prototype.markTile = function($clicked) {
     var row = $clicked.data("rowId");
     var col = $clicked.data("colId");
-    var mark = this.game.currentPlayer;
-    this.game.playMove(row, col);
-    if (mark === "X") {
-      $clicked.addClass("markX");
-      $clicked.html("X");
-    } else {
-      $clicked.addClass("markY");
-      $clicked.html("Y");
-    }
+    this.game.playHumanMove(row, col);
+    $clicked.addClass("markX");
+    $clicked.html("X");
   };
-
 
 })();

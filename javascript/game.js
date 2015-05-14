@@ -9,8 +9,14 @@
   };
 
 
-  Game.prototype.playMove = function(row, col) {
-    this.board.markPosition(row, col, this.currentPlayer);
+  Game.prototype.playHumanMove = function(row, col) {
+    this.board.markHumanPosition(row, col);
+    this.changePlayer();
+    this.playComputerMove();
+  };
+
+  Game.prototype.playComputerMove = function() {
+    this.board.markComputerPosition();
     this.changePlayer();
   };
 
