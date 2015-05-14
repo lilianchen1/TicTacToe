@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TicTacToe</title>
+    <link rel="stylesheet" type="text/css" href="./ttt.css">
+  </head>
+  <body>
+    <script src="./javascript/jquery-2.1.1.js"></script>
+    <script src="./javascript/start.js"></script>
+    <script src="./javascript/gameView.js"></script>
+    <script src="./javascript/game.js"></script>
+    <script src="./javascript/board.js"></script>
+    <script src="./javascript/computerAI.js"></script>
+
+    <script>
+      $(function() {
+        $(".select").startPlay();
+      });
+    </script>
+
+    <div class="game"></div>
+
+    <div class="select">
+      <div clas="pick">Pick a starting player:
+        <button class="player">Me</button>
+        <button class="computer">Computer</button>
+      </div>
+    </div>
+  </body>
+</html>

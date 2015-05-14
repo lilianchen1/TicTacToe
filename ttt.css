@@ -1,0 +1,64 @@
+.row {
+  width: 250px;
+}
+
+.tile {
+  float: left;
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  margin-left: 2px;
+  margin-top: 2px;
+  background: #ccc;
+}
+
+.tile:hover {
+  cursor: pointer;
+  background: #eee;
+}
+
+.markX {
+  background: rgb(255, 77, 77);
+  text-align: center;
+}
+
+.markY {
+  background: rgb(92, 133, 255);
+  text-align: center;
+}
+
+.markX:hover {
+  background: rgb(255, 77, 77);
+}
+
+.markY:hover {
+  background: rgb(92, 133, 255);
+}
+
+.game {
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.select {
+  width: 200px;
+  background: #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  width: 70px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: rgb(204, 153, 255);
+  border: none;
+  margin-top: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
