@@ -4,15 +4,13 @@
   }
 
   var Game = TTT.Game = function(player) {
-    this.board = new TTT.Board();
+    this.board = new TTT.Board(this);
     this.currentPlayer = player === "computer" ? "Y" : "X";
   };
 
 
   Game.prototype.playHumanMove = function(row, col) {
     this.board.markHumanPosition(row, col);
-    this.changePlayer();
-    this.playComputerMove();
   };
 
   Game.prototype.playComputerMove = function() {

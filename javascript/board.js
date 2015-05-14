@@ -3,21 +3,25 @@
     window.TTT = {};
   }
 
-  var Board = TTT.Board = function() {
+  var Board = TTT.Board = function(game) {
     this.grid = this.makeGrid();
+    this.game = game;
   };
 
   Board.prototype.markHumanPosition = function (row, col) {
-    if (!this.isEmpty(row, col)) {
-      alert("this square is already taken; please choose another one");
-    }
     this.grid[row][col] = "X";
+    this.game.changePlayer();
+    
+    if (!this.over()) {
+      this.game.playComputerMove();
+    }
+
   };
 
   Board.prototype.markComputerPosition = function() {
     // get winning/non-losing move
     // add html/css to the correct tile
-    var computer = new TTT.Computer({board: this});
+    var computer = new TTT.Computer({board: this, game: this.game});
     var row = computer.getMove()[0];
     var col = computer.getMove()[1];
     var $tile = $("[data-row-id='" + row + "'][data-col-id='" + col + "']");
@@ -35,6 +39,14 @@
   };
 
   Board.prototype.over = function() {
-    return false;
+    var flattened = [];
+    flattened = flattened.concat.apply(flattened, this.grid);
+    for (var i = 0; i < flattened.length; i++) {
+      if (flattened[i] === 0) {
+        return false;
+      }
+    }
+
+    return true;
   };
 })();

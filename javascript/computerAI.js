@@ -5,9 +5,19 @@
 
   var Computer = TTT.Computer = function(options) {
     this.board = options.board;
+    this.game = options.game;
   };
 
   Computer.prototype.getMove = function() {
-    return [0, 0];
+    var row = Math.floor(Math.random() * 3);
+    var col = Math.floor(Math.random() * 3);
+    while (!this.board.isEmpty(row, col)) {
+      row = Math.floor(Math.random() * 3);
+      col = Math.floor(Math.random() * 3);
+    }
+
+    return [row, col];
+
   };
+
 })();

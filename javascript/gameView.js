@@ -29,6 +29,13 @@
         var $clicked = $(event.currentTarget);
         that.markTile($clicked);
       }
+      if (that.game.board.over()) {
+        $("body").append("<div class='modal'></div>");
+        $("body").append("<div class='over'>Game Over<br><button class='over'>Try Again</button></div>");
+        $("button.over").on("click", function() {
+          location.reload();
+        });
+      }
     });
 
     if (this.game.currentPlayer === "Y") {
@@ -39,9 +46,11 @@
   View.prototype.markTile = function($clicked) {
     var row = $clicked.data("rowId");
     var col = $clicked.data("colId");
-    this.game.playHumanMove(row, col);
-    $clicked.addClass("markX");
-    $clicked.html("X");
+    if (this.game.board.isEmpty(row, col)) {
+      this.game.playHumanMove(row, col);
+      $clicked.addClass("markX");
+      $clicked.html("X");
+    }
   };
 
 })();
