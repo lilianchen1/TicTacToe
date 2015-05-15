@@ -31,7 +31,8 @@
       }
       if (that.game.board.over()) {
         $("body").append("<div class='modal'></div>");
-        $("body").append("<div class='over'>Game Over<br><button class='over'>Try Again</button></div>");
+        $("body").append("<div class='over'>Game Over<br><button class='over'>Play Again</button></div>");
+        $("div.over").animate({left: '50%'}, "slow");
         $("button.over").on("click", function() {
           location.reload();
         });

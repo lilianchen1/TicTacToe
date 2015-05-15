@@ -20,7 +20,7 @@
     for (var i = 0; i < children.length; i++) {
       var currentNode = children[i];
       if (currentNode.willWin()) {
-        var pos = currentNode.prevPos; //pos is in [i, j] form
+        var pos = currentNode.prevPos;
         return pos;
       }
     }
@@ -33,7 +33,7 @@
       }
     }
 
-    // $("body").append("<div class='went-wrong'>WAT? Something went wrong</div>");
+    console.log("oops, something went wrong. WAT?");
 
   };
 
