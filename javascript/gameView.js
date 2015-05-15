@@ -49,7 +49,7 @@
     if (this.game.board.isEmpty(row, col)) {
       this.game.playHumanMove(row, col);
       $clicked.addClass("markX");
-      $clicked.html("X");
+      $clicked.html("<img src='./images/hipmunk.png' />");
     }
   };
 

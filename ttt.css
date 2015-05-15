@@ -91,3 +91,8 @@ div.modal {
   position: fixed;
   z-index: 0;
 }
+
+img {
+  width: 60px;
+  margin-top: 5px;
+}
