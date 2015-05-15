@@ -21,7 +21,7 @@
       var currentNode = children[i];
       if (currentNode.willWin()) {
         var pos = currentNode.prevPos; //pos is in [i, j] form
-        // return pos
+        return pos;
       }
     }
 
@@ -29,23 +29,12 @@
       var currentNode2 = children[j];
       if (!currentNode2.willLose()) {
         var pos2 = currentNode2.prevPos;
-        // return pos2
+        return pos2;
       }
     }
 
-    // $("body").append("<div class='went-wrong'>WAT? Something went wrong</div>")
+    // $("body").append("<div class='went-wrong'>WAT? Something went wrong</div>");
 
-
-    // remove this chunck (which really belongs to dumb AI) after implementing search tree
-
-    var row = Math.floor(Math.random() * 3);
-    var col = Math.floor(Math.random() * 3);
-    while (!this.board.isEmpty(row, col)) {
-      row = Math.floor(Math.random() * 3);
-      col = Math.floor(Math.random() * 3);
-    }
-
-    return [row, col];
   };
 
 })();
