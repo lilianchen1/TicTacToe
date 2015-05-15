@@ -27,7 +27,7 @@
 
     var $tile = $("[data-row-id='" + row + "'][data-col-id='" + col + "']");
     $tile.addClass("markY");
-    $tile.html("<img src='./images/computer.png' />");
+    $tile.html("<img class='computer-img' src='./images/computer.png' />");
     this.grid[row][col] = "Y";
     this.game.changePlayer();
   };
