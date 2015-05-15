@@ -32,7 +32,8 @@
       if (that.game.board.over()) {
         $("body").append("<div class='modal'></div>");
         if (that.game.board.won()) {
-          $("body").append("<div class='over'>Computer Won!<br><button class='over'>Play Again</button></div>");    
+          $("body").append("<div class='over'>Computer Won!<br><button class='over'>Play Again</button></div>");
+          console.log("looks like the computer won! :) ");
         } else {
           $("body").append("<div class='over'>It's a draw!<br><button class='over'>Play Again</button></div>");
         }
@@ -55,6 +56,8 @@
       this.game.playHumanMove(row, col);
       $clicked.addClass("markX");
       $clicked.html("<img src='./images/hipmunk.png' />");
+    } else {
+      console.log("It looks like you clicked on a square that's already taken");
     }
   };
 
