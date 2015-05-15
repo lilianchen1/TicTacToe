@@ -14,7 +14,7 @@
     this.game.changePlayer();
 
     if (!this.over()) {
-      this.game.playComputerMove();
+      this.markComputerPosition();
     }
 
   };
