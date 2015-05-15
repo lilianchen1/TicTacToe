@@ -64,7 +64,7 @@
     if (this.nextPlayerMark !== this.game.currentPlayer) {
       for (var i = 0; i < this.children().length; i++) {
         var node = this.children()[i];
-        if (node.willWin()) {
+        if (node.willLose()) {
           return true;
         }
       }
@@ -72,7 +72,7 @@
     else {
       for (var j = 0; j < this.children().length; j++) {
         var node2 = this.children()[j];
-        if (!node2.willWin()) {
+        if (!node2.willLose()) {
           return false;
         }
       }
