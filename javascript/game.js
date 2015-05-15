@@ -15,7 +15,6 @@
 
   Game.prototype.playComputerMove = function() {
     this.board.markComputerPosition();
-    this.changePlayer();
   };
 
   Game.prototype.changePlayer = function() {

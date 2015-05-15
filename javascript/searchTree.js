@@ -38,16 +38,16 @@
       return this.board.winner === this.game.currentPlayer;
     }
     if (this.nextPlayerMark === this.game.currentPlayer) {
-      for (var i = 0; i < this.children.length; i++) {
-        var node = this.children[i];
+      for (var i = 0; i < this.children().length; i++) {
+        var node = this.children()[i];
         if (node.willWin()) {
           return true;
         }
       }
     }
     else {
-      for (var j = 0; j < this.children.length; j++) {
-        var node2 = this.children[j];
+      for (var j = 0; j < this.children().length; j++) {
+        var node2 = this.children()[j];
         if (!node2.willWin()) {
           return false;
         }
@@ -62,16 +62,16 @@
     }
 
     if (this.nextPlayerMark !== this.game.currentPlayer) {
-      for (var i = 0; i < this.children.length; i++) {
-        var node = this.children[i];
+      for (var i = 0; i < this.children().length; i++) {
+        var node = this.children()[i];
         if (node.willWin()) {
           return true;
         }
       }
     }
     else {
-      for (var j = 0; j < this.children.length; j++) {
-        var node2 = this.children[j];
+      for (var j = 0; j < this.children().length; j++) {
+        var node2 = this.children()[j];
         if (!node2.willWin()) {
           return false;
         }

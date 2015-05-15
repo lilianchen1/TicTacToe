@@ -21,13 +21,15 @@
 
   Board.prototype.markComputerPosition = function() {
     var computer = new TTT.Computer({board: this, game: this.game});
-    var row = computer.getWinningMove()[0];
-    var col = computer.getWinningMove()[1];
+    var pos = computer.getWinningMove() || [0, 0];
+    var row = pos[0];
+    var col = pos[1];
 
     var $tile = $("[data-row-id='" + row + "'][data-col-id='" + col + "']");
     $tile.addClass("markY");
     $tile.html("<img src='./images/computer.png' />");
     this.grid[row][col] = "Y";
+    this.game.changePlayer();
   };
 
   Board.prototype.isEmpty = function(row, col) {
