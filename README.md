@@ -1,6 +1,6 @@
 ## Tic Tac Toe
 
-Play against the unbeatable computer
+Play against the unbeatable computer.
 
 [live link][live]
 
@@ -21,7 +21,9 @@ When it's the computer's turn to make a move:
   - second loop is run if first loop doesn't return anything. Second loop checks for any non-losing child.
 4. Position is obtained from the node.
   - When a node returns true for winning (or not losing), position is obtained from that node.
-  
+
+The methods that check for winning/losing nodes are called recursively. Each child's children are also looked at until the very end (when the board is full or someone wins). This means each move is looked at for how the game can be played out. Thus, the computer will never pick a losing move.
+
 
 #### Note
 
