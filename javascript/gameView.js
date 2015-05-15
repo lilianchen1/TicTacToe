@@ -31,7 +31,11 @@
       }
       if (that.game.board.over()) {
         $("body").append("<div class='modal'></div>");
-        $("body").append("<div class='over'>Game Over<br><button class='over'>Play Again</button></div>");
+        if (that.game.board.won()) {
+          $("body").append("<div class='over'>Computer Won!<br><button class='over'>Play Again</button></div>");    
+        } else {
+          $("body").append("<div class='over'>It's a draw!<br><button class='over'>Play Again</button></div>");
+        }
         $("div.over").animate({left: '50%'}, "slow");
         $("button.over").on("click", function() {
           location.reload();
