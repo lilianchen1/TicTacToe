@@ -55,7 +55,7 @@
     if (this.game.board.isEmpty(row, col)) {
       this.game.playHumanMove(row, col);
       $clicked.addClass("markX");
-      $clicked.html("<img src='./images/hipmunk.png' />");
+      $clicked.html("<img src='./images/puppy.png' />");
     } else {
       console.log("It looks like you clicked on a square that's already taken");
     }
